@@ -20,6 +20,12 @@
 
 ### [什么是函子](../JavaScript/Functor.md)
 
+## JavaScript 异步编程
+
+### [关于 Promise](../JavaScript/Promise.md)
+
+### [关于 Generator](../JavaScript/Generator.md)
+
 ## JavaScript基础
 
 ### [简单实现 new 运算符](../JavaScript/HandWritingNew.md)
