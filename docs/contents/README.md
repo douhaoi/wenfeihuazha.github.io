@@ -5,8 +5,18 @@
 ### [如何禁止手机端点击图片自动放大](../Mobile/1.md)
 
 
-## JavaScript基础
+## 函数式编程
 
 ### [什么是函数式编程](../JavaScript/FunctionProgram.md)
 
-### [【Javascript】手写运算符new实现继承](../JavaScript/HandWritingNew.md)
+### [什么是高阶函数](../JavaScript/HigherOrderFunction.md)
+
+### [关于闭包](../JavaScript/Closure.md)
+
+### [关于柯里化](../JavaScript/HaskellBrooksCurry.md)
+
+### [什么是函子](../JavaScript/Functor.md)
+
+## JavaScript基础
+
+### [简单实现 new 运算符](../JavaScript/HandWritingNew.md)
