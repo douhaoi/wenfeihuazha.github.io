@@ -12,5 +12,8 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "d": "bash deploy.sh"
+  },
+  "dependencies": {
+    "lodash": "^4.17.20"
   }
 }
