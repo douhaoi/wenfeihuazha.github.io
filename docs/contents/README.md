@@ -30,6 +30,8 @@
 
 ### [关于 Generator](../JavaScript/Generator.md)
 
+### [手写 Promise](../JavaScript/MyPromise.md)
+
 ## JavaScript基础
 
 ### [简单实现 new 运算符](../JavaScript/HandWritingNew.md)
