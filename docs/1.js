@@ -1,3 +1,5 @@
+const { reject } = require("lodash");
+
 const PEMDING = 'pending';//等待
 const FULFILLED = 'fulfilled';//成功
 const REJECTED = 'rejected';//失败
@@ -116,4 +118,44 @@ class MyPromise{
       resolve(x);
     }
   }
+
+  finally(callback){
+    return this.then(value=>{
+      return MyPromise.resolve(callback()).then(()=>value)
+    },(reason)=>{
+      return MyPromise.resolve(callback()).then(()=>{throw reason})
+    })
+  }
+
+  catch(failCallback){
+    return this.then(undefined,failCallback)
+  }
+
+  static all(array){
+    let result = [];
+    let index = 0;
+    return new MyPromise((resolve,reject)=>{
+      function addData(key,value){
+        result[key] = value;
+        index++
+        if(index === array.length){
+          resolve(result)
+        }
+      }
+      for(let i = 0; i < array.length; i++){
+        let current = array[i];
+        if(current instanceof MyPromise){//是否为Promise对象
+          current.then(value=>addData(i,value),reason => reject(reason))
+        }else{//普通值
+          addData(i,array[i]);
+        }
+      }
+    })
+  }
+
+  static resolve(value){
+    if(value instanceof MyPromise) return value;
+    return new MyPromise(resolve => resolve(value));
+  }
+  
 }
