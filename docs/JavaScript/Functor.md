@@ -50,7 +50,7 @@ Container.of(null)//原期待传入字符串
 // 会报错
 ```
 
-### MayBe函子
+### MayBe 函子
 - 我们在编程的过程中可能会遇到很多错误,需要对这些错误做相应的处理
 - MayBe 函子的作用就是可以对外部的空值情况做处理(空值副作用在允许的范围)
 
@@ -88,11 +88,11 @@ console.log(r) // null
 // 可以出现null 但是无法判断是哪个过程导致出现null
 ```
 
-#### MayBe函子总结
+#### MayBe 函子总结
 
 - 对函子的undefined && null 在调用fn之前先做判断
 
-### Either函子
+### Either 函子
 
 - Either 两者中的任何一个,类似于if...else的处理
 
@@ -147,11 +147,11 @@ let r = parseJSON('{"name":"zs"}')
 console.log(r)
 ```
 
-#### Either函子总结
+#### Either 函子总结
 
 - 其实就是对函子做的处理增加try catch 捕捉 如果捕捉到错误,返回一个返回保存信息的函子
 
-### IO函子
+### IO 函子
 
 - IO函子中的 _value 是一个函数,这里是把函数作为值来处理
 - IO函子可以把不纯的动作存储到 _value 中,延迟执行这个不存的操作(惰性执行),包装当前的操作纯
@@ -179,5 +179,83 @@ class IO {
 // 调用
 let r = IO.of(process).map( p => p.execPath);
 console.log(r._value());
+```
+
+### Task 函子
+
+- 异步操作的函子
+
+- 通过 folktale 库的 task 函数演示异步函子
+
+```js
+const fs = require('fs');
+// folktale 中的task
+const { task } = require('folktale/concurrency/task');
+const { split } = require('lodash');
+const {split,find} = require('lodash/fp')
+
+function readFile(filename){
+  return task(resolver => {
+    fs.readFile(filename,'utf-8',(err,data)=>{
+      if(err) resolver.reject(err);
+
+      resolver.resolve(data);
+    })
+  })
+}
+
+readFile('package.json')
+  .map(split('\n'))
+  .map(find(x=> x.includes('version')))
+  .run()
+  .listen({
+    onRekected:err=>{
+      console.log(err)
+    },
+    onResolved:value=>{
+      console.log(value)
+    }
+  })
+```
+
+### Pointed 函子
+
+- Pointed 函子是实现了 of 方法的函子
+- of 方法是为了避免使用 new 来创建对象,更深层的含义是 of 方法用来把值放到上下文 context (把值放到容器中,使用 map 来处理值)
+
+### Monad 函子
+
+- 解决IO函子多次调用,函子嵌套问题
+
+```js
+const fs = require('fs')
+const fp = require('lodash/fp')
+
+class IO {
+
+  static of(value){
+    return new IO(function(){
+      return value
+    })
+  }
+
+  constructor(fn){
+    this._value = fn
+  }
+
+  map(fn){
+    return new IO(fp.flowRight(fn,this._value))
+  }
+
+  join(){
+    return tjos._value()
+  }
+
+  flatMap(fn){
+    return this.map(fn).join()
+  }
+}
+
+
 ```
 
