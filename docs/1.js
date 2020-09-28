@@ -1,28 +1,18 @@
-const fs = require('fs')
-const fp = require('lodash/fp')
+const obj = {
+  store:['foo','bar','baz'],
 
-class IO {
-
-  static of(value){
-    return new IO(function(){
-      return value
-    })
-  }
-
-  constructor(fn){
-    this._value = fn
-  }
-
-  map(fn){
-    return new IO(fp.flowRight(fn,this._value))
-  }
-
-  join(){
-    return tjos._value()
-  }
-
-  flatMap(fn){
-    return this.map(fn).join()
+  [Symbol.iterator]:function(){
+    let index = 0;
+    const self = this;
+    return {
+      next:function(){
+        const result =  {
+          value:self.store[index],
+          done:index >= self.store.length
+        }
+        index++
+        return result
+      }
+    }
   }
 }
-

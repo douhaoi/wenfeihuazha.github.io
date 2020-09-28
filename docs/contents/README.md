@@ -32,6 +32,10 @@
 
 ### [手写 Promise](../JavaScript/MyPromise.md)
 
+## ECMAScript 新特性
+
+### [关于 ECMAScript ](../JavaScript/ECMAScript.md)
+
 ## JavaScript基础
 
 ### [简单实现 new 运算符](../JavaScript/HandWritingNew.md)
