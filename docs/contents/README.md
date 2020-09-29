@@ -32,9 +32,11 @@
 
 ### [手写 Promise](../JavaScript/MyPromise.md)
 
-## ECMAScript 新特性
+## [关于 ECMAScript ](../JavaScript/ECMAScript.md)
 
-### [关于 ECMAScript ](../JavaScript/ECMAScript.md)
+## TypeScript
+
+### [关于 TypeScript ](../TypeScript/TypeScript.md)
 
 ## JavaScript基础
 
