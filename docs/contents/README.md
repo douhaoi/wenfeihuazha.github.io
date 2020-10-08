@@ -34,6 +34,8 @@
 
 ## [关于 ECMAScript ](../JavaScript/ECMAScript.md)
 
+## [关于性能优化](../JavaScript/Performance.md)
+
 ## TypeScript
 
 ### [关于 TypeScript ](../TypeScript/TypeScript.md)

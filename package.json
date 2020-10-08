@@ -6,6 +6,7 @@
   "author": "zhanghy <454468165@qq.com>",
   "license": "MIT",
   "devDependencies": {
+    "typescript": "^4.0.3",
     "vuepress": "^1.5.4"
   },
   "scripts": {
