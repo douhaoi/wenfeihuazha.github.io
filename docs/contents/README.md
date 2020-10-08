@@ -32,9 +32,11 @@
 
 ### [手写 Promise](../JavaScript/MyPromise.md)
 
-## [关于 ECMAScript ](../JavaScript/ECMAScript.md)
+## 关于 ECMAScript
+### [关于 ECMAScript ](../JavaScript/ECMAScript.md)
 
-## [关于性能优化](../JavaScript/Performance.md)
+## 性能优化
+### [关于性能优化(侧重内存)](../JavaScript/Performance.md)
 
 ## TypeScript
 
