@@ -1,0 +1,19 @@
+{
+  "envId": "wenfeihuazha-8gzhwg8me78a2ef2",
+  "version": "2.0",
+  "$schema": "https://framework-1258016615.tcloudbaseapp.com/schema/latest.json",
+  "functionRoot": "./functions",
+  "functions": [],
+  "framework": {
+    "name": "wenfeihuazha.github.io",
+    "plugins": {
+      "vuepress": {
+        "use": "@cloudbase/framework-plugin-website",
+        "inputs": {
+          "buildCommand": "npm run build",
+          "outputPath": "docs/.vuepress/dist"
+        }
+      }
+    }
+  }
+}

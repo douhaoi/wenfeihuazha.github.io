@@ -11,8 +11,9 @@
   },
   "scripts": {
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
-    "d": "bash deploy.sh"
+    "build": "vuepress build docs",
+    "d": "bash deploy.sh",
+    "txy:d": "tcb framework:deploy"
   },
   "dependencies": {
     "folktale": "^2.3.2",

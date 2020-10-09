@@ -1,4 +1,4 @@
-# 一些笔记和踩得坑
+# 博文
 
 ## CSS篇
 
@@ -11,6 +11,12 @@
 ## PC端开发常见问题
 
 ### [Safari浏览器数据不刷新](../PC/1.md)
+
+## JavaScript基础
+
+### [简单实现 new 运算符](../JavaScript/HandWritingNew.md)
+
+# 学习笔记
 
 ## 函数式编程
 
@@ -45,7 +51,3 @@
 ## TypeScript
 
 ### [关于 TypeScript ](../TypeScript/TypeScript.md)
-
-## JavaScript基础
-
-### [简单实现 new 运算符](../JavaScript/HandWritingNew.md)
