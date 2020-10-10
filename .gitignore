@@ -1,4 +1,8 @@
-node_modules
-.node_modules
-.dist
-dist
+node_modules/
+gb-pages/
+docs/.vuepress/dist/
+docs/.vuepress/public/images
+.vscode/
+.temp/
+*.exe
+*.cpp

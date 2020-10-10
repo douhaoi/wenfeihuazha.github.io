@@ -1,80 +1,73 @@
+const themeConfig = require('./config/theme/index.js')
+const navConf = require('./config/nav/index')
+const sidebarConf = require('./config/sidebar/index')
+const pluginsConf = require('./config/plugins/index')
 module.exports = {
-  theme: 'reco', 
-  title: '文废画渣の博客',
-  description: '文废画渣の博客',
-  // 注入到当前页面的 HTML <head> 中的标签
-  head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }], // 增加一个自定义的 favicon(网页标签的图标)
-  ],
-  markdown: {
-    lineNumbers: true // 代码块显示行号
-  },
-  base: '/', // 比如你的仓库是test
-  themeConfig: {
-    codeTheme: 'okaidia',
-    sidebar: 'auto',
-    sidebarDepth: 2, // e'b将同时提取markdown中h2 和 h3 标题，显示在侧边栏上。
-    lastUpdated: 'Last Updated', // 文档更新时间：每个文件git最后提交的时间
-    nav:[
-      // { text: '前端算法', link: '/algorithm/' }, // 内部链接 以docs为根目录
-      // { text: '博客', link: 'http://obkoro1.com/' }, // 外部链接
-      // 下拉列表
-      {
-        text: 'GitHub',
-        items: [
-          { text: 'GitHub地址', link: 'https://github.com/wenfeihuazha' },
-          // {
-          //   text: '算法仓库',
-          //   link: 'https://github.com/OBKoro1/Brush_algorithm'
-          // }
-        ]
-      },    
+    title: "Zhy's Blog",
+    description: '文废画渣の博客',
+    // dest: 'public',
+    head: [
+      ['link', { rel: 'icon', href: '/favicon.ico' }],
+      ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }],
+      ["meta", { name: "robots", content: "all" }],
+      ["meta", { name: "author", content: "wenfeihuazha" }],
+      // ['script', { type: 'text/javascript', src: '/assets/js/baidu.js' }],
+      ['script', { "data-ad-client": "ca-pub-6661696030972028", async: true, src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" }, ``],
+      ['script', { src: "/assets/js/jq3.5.1.js" }, ``],
+      ['script', { src: "/assets/js/mouse.js" }, ``],
     ],
-    valineConfig: {
-      appId: 'cEMrM7aKR12QIOHIEDe0XOkW-gzGzoHsz',// your appId
-      appKey: 'JYpHXLFiHj4DqKPmgKokWx6D', // your appKey
-      isShowComments: true
-    }
-    // sidebar:{
-    //   // docs文件夹下面的accumulate文件夹 文档中md文件 书写的位置(命名随意)
-    //   '/accumulate/': [
-    //       '/accumulate/', // accumulate文件夹的README.md 不是下拉框形式
-    //       {
-    //         title: '侧边栏下拉框的标题1',
-    //         children: [
-    //           '/accumulate/JS/test', // 以docs为根目录来查找文件 
-    //           // 上面地址查找的是：docs>accumulate>JS>test.md 文件
-    //           // 自动加.md 每个子选项的标题 是该md文件中的第一个h1/h2/h3标题
-    //         ]
-    //       }
-    //     ],
-    //     // docs文件夹下面的algorithm文件夹 这是第二组侧边栏 跟第一组侧边栏没关系
-    //     '/algorithm/': [
-    //       '/algorithm/', 
-    //       {
-    //         title: '第二组侧边栏下拉框的标题1',
-    //         children: [
-    //           '/algorithm/simple/test' 
-    //         ]
-    //       }
-    //     ]
-    // }
-  },
-  plugins:[
-    [
-      "@vuepress-reco/vuepress-plugin-kan-ban-niang",
-      {
-        theme: ['z16'],
-        clean: true,
-        messages: {
-          welcome: '我是lookroot欢迎你的关注 ',
-          home: '心里的花，我想要带你回家。',
-          theme: '好吧，希望你能喜欢我的其他小伙伴。',
-          close: '再见哦'
+    theme: 'reco',
+    themeConfig: {
+        type: 'blog',
+        smoothScroll: true,
+        // 博客设置
+        blogConfig: {
+            category: {
+                location: 2, // 在导航栏菜单中所占的位置，默认2
+                text: '分类' // 默认 “分类”
+            },
+            tag: {
+                location: 3, // 在导航栏菜单中所占的位置，默认3
+                text: '标签' // 默认 “标签”
+            }
         },
-        width: 240,
-        height: 352
-      }
-    ]
-  ]
+        valineConfig: {
+            appId: 'cEMrM7aKR12QIOHIEDe0XOkW-gzGzoHsz',// your appId
+            appKey: 'JYpHXLFiHj4DqKPmgKokWx6D', // your appKey
+            recordIP:true,
+            placeholder:'填写邮箱地址可以及时收到回复噢...',
+            visitor:true,
+        },
+        authorAvatar: '/avatar.png',
+        // 最后更新时间
+        lastUpdated: '上次更新时间', // string | boolean
+        repo: 'wenfeihuazha.github.io',
+        // 如果你的文档不在仓库的根部
+        docsDir: 'docs',
+        // 可选，默认为 master
+        docsBranch: 'source',
+        editLinks: true,
+        editLinkText: '在 GitHub 上编辑此页！',
+        // 作者
+        author: 'ZHY',
+        // 项目开始时间
+        startYear: '2020',
+        nav: navConf,
+        // sidebar: sidebarConf,
+        // logo: '/head.png',
+        // 搜索设置
+        search: true,
+        searchMaxSuggestions: 10,
+        // 自动形成侧边导航
+        sidebar: 'auto',
+        // 备案
+        // record: '粤ICP备20036386号-1',
+        // recordLink: 'http://www.beian.miit.gov.cn/',
+        // cyberSecurityRecord: '粤公网安备 44060602001609号',
+        // cyberSecurityLink: 'http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44060602001609',
+    },
+    markdown: {
+        lineNumbers: true
+    },
+    plugins: pluginsConf
 }
