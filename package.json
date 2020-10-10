@@ -26,7 +26,7 @@
     "whatwg-fetch": "^3.4.1"
   },
   "scripts": {
-    "docs:dev": "vuepress dev docs",
+    "docs:dev": "vuepress dev docs --temp .temp",
     "build": "vuepress build docs",
     "txy:d": "tcb framework:deploy"
   },

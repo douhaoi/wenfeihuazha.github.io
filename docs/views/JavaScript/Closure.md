@@ -6,7 +6,7 @@ date: 2020-09-21
 # 文章访问密码
 # keys: '123'
 # 是否发布文章
-# publish: false
+# publish: true
 # 置顶: 降序，可以按照 1, 2, 3, ... 来降低置顶文章的排列优先级
 # sticky: 1
 # sidebar: false

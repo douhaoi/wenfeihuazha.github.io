@@ -10,7 +10,7 @@
       "vuepress": {
         "use": "@cloudbase/framework-plugin-website",
         "inputs": {
-          "buildCommand": "npm run build",
+          "buildCommand": "yarn run build",
           "outputPath": "docs/.vuepress/dist"
         }
       }
