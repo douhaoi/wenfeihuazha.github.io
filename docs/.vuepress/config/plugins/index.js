@@ -19,7 +19,7 @@ module.exports = {
 
   },
   'sitemap': {
-      // hostname: 'https://www.chanx.tech'
+      hostname: 'https://zhy.hzjio.com/'
   },
   "dynamic-title":{
       showIcon: "/favicon.ico",
