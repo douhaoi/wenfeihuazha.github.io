@@ -1,4 +1,5 @@
 module.exports = {
+  theme: 'reco', 
   title: '文废画渣の博客',
   description: '文废画渣の博客',
   // 注入到当前页面的 HTML <head> 中的标签
@@ -10,6 +11,7 @@ module.exports = {
   },
   base: '/', // 比如你的仓库是test
   themeConfig: {
+    codeTheme: 'okaidia',
     sidebar: 'auto',
     sidebarDepth: 2, // e'b将同时提取markdown中h2 和 h3 标题，显示在侧边栏上。
     lastUpdated: 'Last Updated', // 文档更新时间：每个文件git最后提交的时间
@@ -28,6 +30,11 @@ module.exports = {
         ]
       },    
     ],
+    valineConfig: {
+      appId: 'cEMrM7aKR12QIOHIEDe0XOkW-gzGzoHsz',// your appId
+      appKey: 'JYpHXLFiHj4DqKPmgKokWx6D', // your appKey
+      isShowComments: true
+    }
     // sidebar:{
     //   // docs文件夹下面的accumulate文件夹 文档中md文件 书写的位置(命名随意)
     //   '/accumulate/': [
@@ -52,5 +59,22 @@ module.exports = {
     //       }
     //     ]
     // }
-  }
+  },
+  plugins:[
+    [
+      "@vuepress-reco/vuepress-plugin-kan-ban-niang",
+      {
+        theme: ['z16'],
+        clean: true,
+        messages: {
+          welcome: '我是lookroot欢迎你的关注 ',
+          home: '心里的花，我想要带你回家。',
+          theme: '好吧，希望你能喜欢我的其他小伙伴。',
+          close: '再见哦'
+        },
+        width: 240,
+        height: 352
+      }
+    ]
+  ]
 }

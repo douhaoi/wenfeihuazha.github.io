@@ -1,3 +1,10 @@
+---
+title: 关于 ECMAScrip
+date: 2020-09-30
+tags:
+- 学习笔记
+- JavaScript基础
+---
 # 关于 ECMAScrip
 
 ## 概念

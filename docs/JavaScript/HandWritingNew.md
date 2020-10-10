@@ -1,3 +1,11 @@
+---
+title: 简单实现 new 运算符
+date: 2020-09-21
+tags:
+- 博文
+- JavaScript基础
+---
+
 # 简单实现 new 运算符
 
 ## 关于 new 

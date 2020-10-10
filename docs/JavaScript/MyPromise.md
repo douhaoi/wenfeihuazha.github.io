@@ -1,3 +1,11 @@
+---
+title: 手写 Promise
+date: 2020-09-22
+tags:
+- 学习笔记
+- JavaScript基础
+---
+
 # 手写 Promise
 
 ## 概念 && 基本使用方式

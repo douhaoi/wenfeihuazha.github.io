@@ -1,3 +1,11 @@
+---
+title: 关于 Promise
+date: 2020-09-21
+tags:
+- 学习笔记
+- JavaScript基础
+---
+
 # 关于 Promise
 
 ## 概念

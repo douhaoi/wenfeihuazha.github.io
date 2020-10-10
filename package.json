@@ -16,8 +16,10 @@
     "txy:d": "tcb framework:deploy"
   },
   "dependencies": {
+    "@vuepress-reco/vuepress-plugin-kan-ban-niang": "^1.0.5",
     "folktale": "^2.3.2",
     "fs": "^0.0.1-security",
-    "lodash": "^4.17.20"
+    "lodash": "^4.17.20",
+    "vuepress-theme-reco": "^1.5.7"
   }
 }
