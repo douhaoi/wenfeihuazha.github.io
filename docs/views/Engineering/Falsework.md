@@ -63,3 +63,19 @@ npm i generator-node -g
 mkidr my-module
 yo node
 ```
+
+[Yeoman 相关模块联系代码](https://github.com/wenfeihuazha/wenfeihuazha.github.io/tree/develop/docs/Engineering/Yeoman/code)
+
+## 关于 Plop
+
+- 用于创建项目中同类型的文件
+
+### 使用
+
+- 将 plop 模块作为项目开发依赖安装
+- 在项目根目录下创建一个plopfile.js文件
+- 在plopfile.js文件中定义脚手架任务
+- 编写用于生成特定类文件的模板
+- 通过plop提供的CLI运行脚手架任务
+
+[Plop 相关模块联系代码](https://github.com/wenfeihuazha/wenfeihuazha.github.io/tree/develop/docs/Engineering/Plop/code)
