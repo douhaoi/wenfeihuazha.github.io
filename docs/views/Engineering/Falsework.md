@@ -64,7 +64,7 @@ mkidr my-module
 yo node
 ```
 
-[Yeoman 相关模块联系代码](https://github.com/wenfeihuazha/wenfeihuazha.github.io/tree/develop/docs/Engineering/Yeoman/code)
+[Yeoman 相关模块联系代码](https://github.com/wenfeihuazha/EngineeringCode/tree/master/Yeoman)
 
 ## 关于 Plop
 
@@ -78,4 +78,4 @@ yo node
 - 编写用于生成特定类文件的模板
 - 通过plop提供的CLI运行脚手架任务
 
-[Plop 相关模块联系代码](https://github.com/wenfeihuazha/wenfeihuazha.github.io/tree/develop/docs/Engineering/Plop/code)
+[Plop 相关模块联系代码](https://github.com/wenfeihuazha/EngineeringCode/tree/master/Plop)

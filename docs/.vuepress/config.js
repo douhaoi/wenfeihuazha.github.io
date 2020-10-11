@@ -11,7 +11,6 @@ module.exports = {
       ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }],
       ["meta", { name: "robots", content: "all" }],
       ["meta", { name: "author", content: "wenfeihuazha" }],
-      // ['script', { type: 'text/javascript', src: '/assets/js/baidu.js' }],
       ['script', { "data-ad-client": "ca-pub-6661696030972028", async: true, src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" }, ``],
       ['script', { src: "/assets/js/jq3.5.1.js" }, ``],
       ['script', { src: "/assets/js/mouse.js" }, ``],
