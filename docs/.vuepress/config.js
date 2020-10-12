@@ -3,7 +3,7 @@ const pluginsConf = require('./config/plugins/index')
 module.exports = {
     title: "Zhy's Blog",
     description: '文废画渣の博客',
-    // dest: 'public',
+    dest: 'dist',
     head: [
       ['link', { rel: 'icon', href: '/favicon.ico' }],
       ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }],
