@@ -1,3 +1,4 @@
+const nav = require('../nav')
 module.exports = {
   type: 'blog',
   smoothScroll: true,
@@ -22,18 +23,18 @@ module.exports = {
   authorAvatar: '/avatar.png',
   // 最后更新时间
   lastUpdated: '上次更新时间', // string | boolean
-  repo: 'wenfeihuazha.github.io',
+  // repo: 'wenfeihuazha.github.io',
   // 如果你的文档不在仓库的根部
-  docsDir: 'docs',
+  // docsDir: 'docs',
   // 可选，默认为 master
-  docsBranch: 'source',
-  editLinks: true,
-  editLinkText: '在 GitHub 上编辑此页！',
+  // docsBranch: 'source',
+  // editLinks: true,
+  // editLinkText: '在 GitHub 上编辑此页！',
   // 作者
   author: 'ZHY',
   // 项目开始时间
   startYear: '2020',
-  nav: navConf,
+  nav: nav,
   // sidebar: sidebarConf,
   // logo: '/head.png',
   // 搜索设置
