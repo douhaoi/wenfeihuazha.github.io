@@ -28,7 +28,8 @@
   "scripts": {
     "docs:dev": "vuepress dev docs --temp .temp",
     "build": "vuepress build docs",
-    "txy:d": "tcb framework:deploy"
+    "txy:d": "tcb framework:deploy",
+    "publish":"node upqiniu.js"
   },
   "dependencies": {
     "@vuepress-reco/vuepress-plugin-kan-ban-niang": "^1.0.5",
