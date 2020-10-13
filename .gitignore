@@ -8,3 +8,4 @@ docs/.vuepress/public/images
 *.exe
 *.cpp
 *.log
+configKey.js

@@ -12,7 +12,6 @@ module.exports = {
       ['script', { "data-ad-client": "ca-pub-6661696030972028", async: true, src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" }, ``],
       ['script', { src: "/assets/js/jq3.5.1.js" }, ``],
       ['script', { src: "/assets/js/mouse.js" }, ``],
-      ['script', { src:"//github.atool.org/canvas-nest.min.js"},``]
     ],
     theme: 'reco',
     themeConfig: themeConfig,
