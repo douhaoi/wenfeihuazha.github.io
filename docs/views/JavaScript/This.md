@@ -14,10 +14,10 @@ sticky: 1
 # isTimeLine: false
 # isShowComment: true
 tags:
-- 'JavaScript基础'
-- '博文'
+- 博文
+- JavaScript基础
 categories:
-- 'JavaScript基础'
+- 博文
 ---
 
 对于 JavaScript 中的 this,你是否还有困惑呢?
