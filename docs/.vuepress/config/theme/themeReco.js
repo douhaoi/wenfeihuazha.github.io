@@ -24,7 +24,7 @@ module.exports = {
   authorAvatar: '/avatar.png',
   // 最后更新时间
   lastUpdated: '上次更新时间', // string | boolean
-  repo: 'wenfeihuazha.github.io',
+  repo: 'wenfeihuazha/wenfeihuazha.github.io/tree/develop',
   // 如果你的文档不在仓库的根部
   // docsDir: 'docs',
   // 可选，默认为 master
