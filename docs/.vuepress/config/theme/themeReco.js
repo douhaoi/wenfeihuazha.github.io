@@ -1,5 +1,5 @@
 const nav = require('../nav');
-const {VALINEID,VALINEKEY} = require('/configKey.js')
+const {VALINEID,VALINEKEY} = require('../../../../configKey.js')
 module.exports = {
   type: 'blog',
   smoothScroll: true,
