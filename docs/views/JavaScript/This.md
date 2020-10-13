@@ -8,7 +8,7 @@ date: 2020-10-13
 # 是否发布文章
 # publish: true
 # 置顶: 降序，可以按照 1, 2, 3, ... 来降低置顶文章的排列优先级
-# sticky: 1
+sticky: 1
 # sidebar: false
 # sidebarDepth: 2
 # isTimeLine: false
