@@ -28,9 +28,9 @@ module.exports = {
   // 如果你的文档不在仓库的根部
   // docsDir: 'docs',
   // 可选，默认为 master
-  docsBranch: 'develop',
-  editLinks: true,
-  editLinkText: '在 GitHub 上编辑此页！',
+  // docsBranch: 'develop',
+  // editLinks: true,
+  // editLinkText: '在 GitHub 上编辑此页！',
   // 作者
   author: 'ZHY',
   // 项目开始时间
