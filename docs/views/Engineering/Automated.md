@@ -429,3 +429,19 @@ exports.default = () => {
 }
 
 ```
+
+- 文件操作 API
+
+```js
+const { src,dest } = require('gulp');
+const cleanCss = require('gulp-clean-css')
+const rename = require('gulp-rename');
+
+exports.default = () => {
+  return src('src/normalize.css')
+    .pipe(cleanCss()) //压缩css插件
+    .pipe(rename({extname:'.min.css'}))
+    .pipe(dest('dist'))
+}
+```
+
