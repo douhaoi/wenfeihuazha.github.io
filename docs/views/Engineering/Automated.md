@@ -14,7 +14,6 @@ date: 2020-10-11
 # isTimeLine: false
 # isShowComment: true
 tags:
-- 'JavaScript基础'
 - '学习笔记'
 - '脚手架'
 categories:
