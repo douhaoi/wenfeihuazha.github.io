@@ -46,6 +46,6 @@ module.exports = {
   // 备案
   record: '浙ICP备2020038392号',
   recordLink: 'http://www.beian.gov.cn/',
-  // cyberSecurityRecord: '粤公网安备 44060602001609号',
-  // cyberSecurityLink: 'http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44060602001609',
+  cyberSecurityRecord: '浙公网安备 2020038392号',
+  cyberSecurityLink: 'http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=2020038392',
 }
