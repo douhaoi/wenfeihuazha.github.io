@@ -140,7 +140,7 @@ class MyPromise{
   reject = reason => {
     // 如果状态不为pending 阻止程序向下执行
     if(this.status !== PEMDING) return;
-    // 讲状态改为失败
+    // 将状态改为失败
     this.status = REJECTED;
     // 保存失败之后的原因
     this.reason = reason
@@ -218,7 +218,7 @@ class MyPromise{
     }else if(this.status === REJECTED){
       failCallback(this.reason);
     }else{ //代表当前状态为等待状态
-      this.successCallback
+      this.successCallback.push(successCallback)
       this.failCallback.push(failCallback);
     }
   }
@@ -287,7 +287,7 @@ class MyPromise{
       }else if(this.status === REJECTED){
         failCallback(this.reason);
       }else{ //代表当前状态为等待状态
-        this.successCallback
+        this.successCallback.push(successCallback);
         this.failCallback.push(failCallback);
       };
     });

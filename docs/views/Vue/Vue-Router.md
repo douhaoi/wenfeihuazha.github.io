@@ -257,5 +257,104 @@ app.listen(3000, () => {
 
 ```
 
-### Nginx 配置
+## Vue-Router 实现原理
 
+### Hash 模式
+- URL中#后面的内容作为路径地址
+- 监听 hashchange 事件
+- 根据当前路由地址找到对应组件重新渲染
+
+### History 模式
+- 通过 history.pushState()方法改变地址栏
+- 监听 popstate 事件
+- 根据当前路由地址找到对应组件重新渲染
+
+## 完整实现手写vue-router
+
+```js
+let _Vue = null
+export default class VueRouter {
+  static install (Vue) {
+    // 1. 判断当前插件是否已经被安装
+    if (VueRouter.install.installed) {
+      return
+    }
+    VueRouter.install.installed = true
+    // 2. 把 Vue 构造函数记录到全局变量(在创建组件时候需要)
+    _Vue = Vue
+    // 3. 把创建 Vue 实例时候传入的 router 对象注入到 Vue 实例上
+    // 通过混入去挂载到 vue 实例对象
+    _Vue.mixin({
+      beforeCreate () {
+        if (this.$options.router) { // 判断是vue实例 还是组件, 组件没有 router
+          _Vue.prototype.$router = this.$options.router
+          this.$options.router.init()
+        }
+      }
+    })
+  }
+
+  constructor (options) {
+    this.options = options
+    this.routerMap = {}
+    this.data = _Vue.observable({ // 通过observable将data转换为响应式对象
+      currrent: '/' // 默认地址为 /
+    })
+  }
+
+  init () {
+    this.createRouterMap()
+    this.initComponents(_Vue)
+    this.initEvent()
+  }
+
+  createRouterMap () {
+    // 遍历路由规则,解析成键值对的方式
+    this.options.routes.forEach(route => {
+      this.routerMap[route.path] = route.component
+    })
+  }
+
+  initComponents (Vue) {
+    Vue.component('router-link', {
+      props: {
+        to: String
+      },
+      render(h){
+        return h('a',{
+          attrs:{
+            href:this.to
+          },
+          on:{
+            click:this.chilckHandler
+          }
+        },[this.$slots.default])
+      },
+      methods:{
+        chilckHandler(e){
+          history.pushState({},"",this.to)
+          this.$router.data.current=this.to
+          e.preventDefault()
+        }
+      }
+      // template: '<a :href="to"><slot></slot></a>' //编译版的vue不支持这种写法 要么在vue.config.js中设置runtimeCompiler,要么换种写法
+    })
+
+
+    const self = this;
+    Vue.component('router-view',{
+      render(h){
+        const component = self.routerMap[self.data.currrent]
+        return h(component)
+      }
+    })
+  }
+
+  initEvent(){
+    window.addEventListener('popstate',()=>{
+      this.data.currrent = window.location.pathname
+    })
+  }
+}
+
+```
