@@ -44,7 +44,7 @@ module.exports = {
   // 自动形成侧边导航
   sidebar: 'auto',
   // 备案
-  record: '浙ICP备2020038392号',
+  record: '浙ICP备2020038392-1号',
   recordLink: 'http://www.beian.gov.cn/',
   cyberSecurityRecord: '浙公网安备 2020038392号',
   cyberSecurityLink: 'http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=2020038392',
