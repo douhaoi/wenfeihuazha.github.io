@@ -298,7 +298,7 @@ export default class VueRouter {
     this.options = options
     this.routerMap = {}
     this.data = _Vue.observable({ // 通过observable将data转换为响应式对象
-      currrent: '/' // 默认地址为 /
+      current: '/' // 默认地址为 /
     })
   }
 
