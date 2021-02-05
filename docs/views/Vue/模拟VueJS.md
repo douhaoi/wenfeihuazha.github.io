@@ -52,12 +52,13 @@ Object.defineProperty(vm, 'msg', {
   },
   // 当设置值的时候执行 
   set(newValue) {
+    console.log('set: ', newValue)
+    if (newValue === data.msg) {
+      return
+    }
   }
 })
-console.log('set: ', newValue)
-if (newValue === data.msg) {
-  return
-}
+
 data.msg = newValue
 // 数据更改，更新 DOM 的值 document.querySelector('#app').textContent = data.msg
 // 测试
@@ -199,7 +200,7 @@ class Vue{
     this.$options = options || {}
     this.$data = options.data || {}
     this.$el = typeof options.el === 'string' ? document.querySelector(options.el) : options.el
-    // 2. 把data中的成员转换成 getter 和 setter,注入到vue实例中
+    // 2. 把data中的成员转换成 getter 和 setter,注入到vue实例中 // 代理data
     this._proxyData(this.$data)
     // 3. 调用 observer 对象,监听数据的表达式
     new Observer(this.$data)
@@ -865,7 +866,7 @@ class Watcher{
     this.cb = cb
 
     // 把watcher对象记录到Dep类的静态属性target中
-     = this
+     Dep.target = this;
     // 触发get方法,在get方法中会调用addSub
 
     this.oldValue = vm[key]
